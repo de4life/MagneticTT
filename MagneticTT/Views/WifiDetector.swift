@@ -8,19 +8,18 @@
 import SwiftUI
 
 struct WifiDetector: View {
-    
-   @State private var progress: CGFloat = 0
-   
+    @State private var progress: CGFloat = 0
+    @State private var randomData: Int = 0
     let maxProgress: CGFloat = 100
+    let onStop: (Int) -> Void
 
     var body: some View {
-        NavigationView {
-            makeUI()
-                .onAppear {
-                    startTimer()
-                }
-        }
-        .navigationBarHidden(true)
+        makeUI()
+            .onAppear {
+                startTimer()
+                generateRandomData()
+            }
+            .navigationBarHidden(true)
     }
     
     private func makeUI() -> some View {
@@ -33,11 +32,11 @@ struct WifiDetector: View {
                     Text("Scanning Your Wi-Fi")
                         .foregroundColor(.white)
                         .padding(.top, geo.size.height * 0.1)
-                
+                    
                     Text("TLind_246_lp")
                         .foregroundColor(Color(red: 0.427, green: 0.349, blue: 0.827))
                         .padding(.top, 10)
-                   
+                    
                     Spacer()
                 }
                 
@@ -51,12 +50,20 @@ struct WifiDetector: View {
                                 .padding()
                                 .transition(.opacity)
                         )
+                    Text("\(randomData)")
+                        .foregroundColor(Color(red: 0.427, green: 0.349, blue: 0.827))
+                        
+                    + Text("  Devices Found...")
+                        .foregroundColor(.white)
+                    
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 VStack {
                     Spacer()
                     
-                    NavigationLink(destination: WifiDetectorDetail()) {
+                    Button(action: {
+                        onStop(randomData)
+                    }) {
                         Text("Stop")
                             .font(.headline)
                             .frame(width: 350, height: 50)
@@ -79,5 +86,8 @@ struct WifiDetector: View {
             }
         }
     }
+    
+    private func generateRandomData() {
+        randomData = Int.random(in: 1...24)
+    }
 }
-
