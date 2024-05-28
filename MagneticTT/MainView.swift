@@ -10,15 +10,32 @@ import SwiftUI
 struct MainView: View {
     
     @State private var isMagneticViewActive = false
-    
+    @State private var isWifiDetectorActive = false
+    @State private var isWifiDetectorDetailActive = false
+    @State private var randomData: Int = 0
+
     var body: some View {
-        NavigationView { 
-            mainScreenUI()
+            NavigationView {
+                VStack {
+                    if isWifiDetectorDetailActive {
+                        WifiDetectorDetail(onBackToMain: {
+                            isWifiDetectorDetailActive = false
+                            isWifiDetectorActive = false
+                        }, randomData: randomData)
+                    } else if isWifiDetectorActive {
+                        WifiDetector(onStop: { randomData in
+                            self.randomData = randomData
+                            self.isWifiDetectorDetailActive = true
+                        })
+                    } else {
+                        mainScreenUI()
+                    }
+                }
                 .navigationBarTitle("")
                 .navigationBarHidden(true)
                 .background(EmptyView())
+            }
         }
-    }
     
     private func mainScreenUI() -> some View {
         GeometryReader { geo in
@@ -68,7 +85,9 @@ struct MainView: View {
                                     .font(.body)
                                     .foregroundColor(.white)
                                 
-                                NavigationLink(destination: WifiDetector()) {
+                                Button(action: {
+                                    isWifiDetectorActive = true
+                                }) {
                                     Text("Scan current network")
                                         .frame(width: 312, height: 50)
                                         .background(Color(red: 0.427, green: 0.349, blue: 0.827))
