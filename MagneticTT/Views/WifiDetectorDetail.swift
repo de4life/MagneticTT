@@ -5,20 +5,36 @@
 //  Created by Artur Ageev on 28.05.2024.
 //
 
-import Foundation
 import SwiftUI
 
 struct WifiDetectorDetail: View {
     
+    @Environment(\.presentationMode) var presentationMode
+    
+    let onBackToMain: () -> Void
+    let randomData: Int
+    let wifiNames = ["Network_1", "Network_2", "Network_3", "Network_4", "Network_5", "Network_6", "Network_7", "Network_8", "Network_9", "Network_10", "Network_11", "Network_12", "Network_13", "Network_14", "Network_15", "Network_16", "Network_17", "Network_18", "Network_19", "Network_20", "Network_21", "Network_22", "Network_23", "Network_24"]
+
     var body: some View {
-        makeUI()
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Text("Result")
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(.white)
+        NavigationView {
+            makeUI()
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button(action: {
+                            onBackToMain()
+                        }) {
+                            Image(systemName: "chevron.left")
+                                .foregroundColor(Color(red: 0.427, green: 0.349, blue: 0.827))
+                        }
+                    }
+                    ToolbarItem(placement: .principal) {
+                        Text("Result")
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(.white)
+                    }
                 }
-            }
+        }
+        .navigationBarBackButtonHidden(true)
     }
     
     private func makeUI() -> some View {
@@ -26,7 +42,47 @@ struct WifiDetectorDetail: View {
             ZStack {
                 Color.black
                     .edgesIgnoringSafeArea(.all)
+                VStack {
+                    (Text("\(randomData)")
+                        .foregroundColor(Color(red: 0.427, green: 0.349, blue: 0.827))
+                        .font(
+                            Font.custom("Roboto", size: 28)
+                                .weight(.bold)
+                        )
+                    + Text("  Devices")
+                        .foregroundColor(.white)
+                        .font(
+                            Font.custom("Roboto", size: 28)
+                                .weight(.bold)
+                        ))
+                    .padding(.top, 10)
+                    Text("WIFI_Name")
+                        .foregroundColor(Color(red: 0.322, green: 0.345, blue: 0.471))
+                        .font(
+                            Font.custom("Roboto", size: 15)
+                                .weight(.regular)
+                        )
+                        .padding(.top, 5)
+                    
+                    List {
+                        ForEach(0..<randomData, id: \.self) { index in
+                            NavigationLink(destination: DeviceDetail(wifiName: wifiNames.randomElement()!, ipAddress: randomIPAddress(), wifiIcon: index % 2 == 0 ? "viewwifion" : "viewwifino")) {
+                                DeviceCell(wifiName: wifiNames.randomElement()!, ipAddress: randomIPAddress(), wifiIcon: index % 2 == 0 ? "wifion" : "wifino")
+                            }
+                            .listRowBackground(Color.black)
+                            .listRowInsets(EdgeInsets())
+                            .padding(.horizontal, -16)
+                        }
+                    }
+                    .listStyle(PlainListStyle())
+                    .background(Color.black)
+                }
             }
         }
+    }
+    
+    private func randomIPAddress() -> String {
+        let octets = (0..<4).map { _ in String(Int.random(in: 0...255)) }
+        return octets.joined(separator: ".")
     }
 }
