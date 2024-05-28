@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
+    
     @State private var isMagneticViewActive = false
     
     var body: some View {
@@ -67,9 +68,7 @@ struct MainView: View {
                                     .font(.body)
                                     .foregroundColor(.white)
                                 
-                                Button(action: {
-                                    // Действие при нажатии кнопки
-                                }) {
+                                NavigationLink(destination: WifiDetector()) {
                                     Text("Scan current network")
                                         .frame(width: 312, height: 50)
                                         .background(Color(red: 0.427, green: 0.349, blue: 0.827))
@@ -83,7 +82,7 @@ struct MainView: View {
                     HStack(spacing: 40) {
                         VStack {
                             Button(action: {
-                                // Действие при нажатии кнопки
+                                
                             }) {
                                 VStack {
                                     Image("camera")
@@ -113,7 +112,7 @@ struct MainView: View {
                         
                         VStack {
                             Button(action: {
-                                // Действие при нажатии кнопки
+                                
                             }) {
                                 VStack {
                                     Image("bluet")
@@ -126,7 +125,7 @@ struct MainView: View {
                             .cornerRadius(8)
                             
                             Button(action: {
-                                // Действие при нажатии кнопки
+                                
                             }) {
                                 VStack {
                                     Image("tips")
