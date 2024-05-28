@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		722C06012C060E98003D1530 /* WifiDetectorDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722C06002C060E98003D1530 /* WifiDetectorDetail.swift */; };
+		722C06032C062F2A003D1530 /* DeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722C06022C062F2A003D1530 /* DeviceCell.swift */; };
+		722C06052C0639F4003D1530 /* DeviceDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722C06042C0639F4003D1530 /* DeviceDetailCell.swift */; };
 		726515222C04D2080030840E /* MagneticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726515212C04D2080030840E /* MagneticView.swift */; };
 		726515242C05F40E0030840E /* SpeedometrView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726515232C05F40E0030840E /* SpeedometrView.swift */; };
 		726515262C05F4F90030840E /* WifiDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726515252C05F4F90030840E /* WifiDetector.swift */; };
@@ -27,6 +29,8 @@
 
 /* Begin PBXFileReference section */
 		722C06002C060E98003D1530 /* WifiDetectorDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiDetectorDetail.swift; sourceTree = "<group>"; };
+		722C06022C062F2A003D1530 /* DeviceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCell.swift; sourceTree = "<group>"; };
+		722C06042C0639F4003D1530 /* DeviceDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailCell.swift; sourceTree = "<group>"; };
 		726515212C04D2080030840E /* MagneticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagneticView.swift; sourceTree = "<group>"; };
 		726515232C05F40E0030840E /* SpeedometrView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedometrView.swift; sourceTree = "<group>"; };
 		726515252C05F4F90030840E /* WifiDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiDetector.swift; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 				726515232C05F40E0030840E /* SpeedometrView.swift */,
 				726515252C05F4F90030840E /* WifiDetector.swift */,
 				722C06002C060E98003D1530 /* WifiDetectorDetail.swift */,
+				722C06022C062F2A003D1530 /* DeviceCell.swift */,
+				722C06042C0639F4003D1530 /* DeviceDetailCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -229,6 +235,8 @@
 				726515242C05F40E0030840E /* SpeedometrView.swift in Sources */,
 				72A980DA2C04B1FD00EB033F /* MagneticTTApp.swift in Sources */,
 				726515222C04D2080030840E /* MagneticView.swift in Sources */,
+				722C06032C062F2A003D1530 /* DeviceCell.swift in Sources */,
+				722C06052C0639F4003D1530 /* DeviceDetailCell.swift in Sources */,
 				72A980DC2C04B1FD00EB033F /* Persistence.swift in Sources */,
 				72A980EE2C04B22400EB033F /* MainView.swift in Sources */,
 				7265152F2C0607840030840E /* LottieAnimations.swift in Sources */,
