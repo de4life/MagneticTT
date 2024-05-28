@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		722C06012C060E98003D1530 /* WifiDetectorDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722C06002C060E98003D1530 /* WifiDetectorDetail.swift */; };
 		726515222C04D2080030840E /* MagneticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726515212C04D2080030840E /* MagneticView.swift */; };
 		726515242C05F40E0030840E /* SpeedometrView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726515232C05F40E0030840E /* SpeedometrView.swift */; };
+		726515262C05F4F90030840E /* WifiDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726515252C05F4F90030840E /* WifiDetector.swift */; };
+		726515292C0606C60030840E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 726515282C0606C60030840E /* Lottie */; };
+		7265152C2C0607050030840E /* animationHS6.json in Resources */ = {isa = PBXBuildFile; fileRef = 7265152B2C0607050030840E /* animationHS6.json */; };
+		7265152F2C0607840030840E /* LottieAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7265152E2C0607840030840E /* LottieAnimations.swift */; };
 		72A980DA2C04B1FD00EB033F /* MagneticTTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A980D92C04B1FD00EB033F /* MagneticTTApp.swift */; };
 		72A980DC2C04B1FD00EB033F /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A980DB2C04B1FD00EB033F /* Persistence.swift */; };
 		72A980DF2C04B1FD00EB033F /* MagneticTT.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 72A980DD2C04B1FD00EB033F /* MagneticTT.xcdatamodeld */; };
@@ -21,8 +26,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		722C06002C060E98003D1530 /* WifiDetectorDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiDetectorDetail.swift; sourceTree = "<group>"; };
 		726515212C04D2080030840E /* MagneticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagneticView.swift; sourceTree = "<group>"; };
 		726515232C05F40E0030840E /* SpeedometrView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedometrView.swift; sourceTree = "<group>"; };
+		726515252C05F4F90030840E /* WifiDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiDetector.swift; sourceTree = "<group>"; };
+		7265152B2C0607050030840E /* animationHS6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animationHS6.json; sourceTree = "<group>"; };
+		7265152E2C0607840030840E /* LottieAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieAnimations.swift; sourceTree = "<group>"; };
 		72A980D62C04B1FD00EB033F /* MagneticTT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagneticTT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72A980D92C04B1FD00EB033F /* MagneticTTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagneticTTApp.swift; sourceTree = "<group>"; };
 		72A980DB2C04B1FD00EB033F /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -42,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				726515292C0606C60030840E /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,10 +61,29 @@
 		726515202C04D1ED0030840E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7265152D2C06076B0030840E /* Lottie */,
 				726515212C04D2080030840E /* MagneticView.swift */,
 				726515232C05F40E0030840E /* SpeedometrView.swift */,
+				726515252C05F4F90030840E /* WifiDetector.swift */,
+				722C06002C060E98003D1530 /* WifiDetectorDetail.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		7265152A2C0606EF0030840E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7265152B2C0607050030840E /* animationHS6.json */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		7265152D2C06076B0030840E /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				7265152E2C0607840030840E /* LottieAnimations.swift */,
+			);
+			path = Lottie;
 			sourceTree = "<group>";
 		};
 		72A980CD2C04B1FD00EB033F = {
@@ -76,6 +105,7 @@
 		72A980D82C04B1FD00EB033F /* MagneticTT */ = {
 			isa = PBXGroup;
 			children = (
+				7265152A2C0606EF0030840E /* Utils */,
 				726515202C04D1ED0030840E /* Views */,
 				72A980F12C04CDD400EB033F /* Info.plist */,
 				72A980F02C04C7C600EB033F /* Resources */,
@@ -132,6 +162,9 @@
 			dependencies = (
 			);
 			name = MagneticTT;
+			packageProductDependencies = (
+				726515282C0606C60030840E /* Lottie */,
+			);
 			productName = MagneticTT;
 			productReference = 72A980D62C04B1FD00EB033F /* MagneticTT.app */;
 			productType = "com.apple.product-type.application";
@@ -160,6 +193,9 @@
 				Base,
 			);
 			mainGroup = 72A980CD2C04B1FD00EB033F;
+			packageReferences = (
+				726515272C0606C60030840E /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 72A980D72C04B1FD00EB033F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -178,6 +214,7 @@
 				72A980E32C04B1FF00EB033F /* Assets.xcassets in Resources */,
 				72A980F72C04CFBE00EB033F /* Roboto-Regular.ttf in Resources */,
 				72A980F52C04CF9E00EB033F /* Roboto-Bold.ttf in Resources */,
+				7265152C2C0607050030840E /* animationHS6.json in Resources */,
 				72A980F32C04CF7800EB033F /* Roboto-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,7 +231,10 @@
 				726515222C04D2080030840E /* MagneticView.swift in Sources */,
 				72A980DC2C04B1FD00EB033F /* Persistence.swift in Sources */,
 				72A980EE2C04B22400EB033F /* MainView.swift in Sources */,
+				7265152F2C0607840030840E /* LottieAnimations.swift in Sources */,
+				722C06012C060E98003D1530 /* WifiDetectorDetail.swift in Sources */,
 				72A980DF2C04B1FD00EB033F /* MagneticTT.xcdatamodeld in Sources */,
+				726515262C05F4F90030840E /* WifiDetector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +455,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		726515272C0606C60030840E /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		726515282C0606C60030840E /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 726515272C0606C60030840E /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		72A980DD2C04B1FD00EB033F /* MagneticTT.xcdatamodeld */ = {
