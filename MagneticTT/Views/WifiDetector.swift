@@ -50,11 +50,19 @@ struct WifiDetector: View {
                                 .padding()
                                 .transition(.opacity)
                         )
-                    Text("\(randomData)")
+                    (Text("\(randomData)")
                         .foregroundColor(Color(red: 0.427, green: 0.349, blue: 0.827))
+                        .font(
+                            Font.custom("Roboto", size: 28)
+                                .weight(.bold)
+                        )
                         
                     + Text("  Devices Found...")
                         .foregroundColor(.white)
+                        .font(
+                            Font.custom("Roboto", size: 17)
+                                .weight(.medium)
+                        ))
                     
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
