@@ -10,6 +10,8 @@ import SwiftUI
 
 struct DeviceDetail: View {
     
+    @Environment(\.presentationMode) var presentationMode
+    
     let wifiName: String
     let ipAddress: String
     let wifiIcon: String
@@ -35,12 +37,21 @@ struct DeviceDetail: View {
                 VStack {
                     VStack(spacing: 10) {
                         Text(wifiName)
-                            .foregroundColor(Color(red: 0.427, green: 0.349, blue: 0.827))
+                            .foregroundColor({
+                                switch wifiIcon {
+                                case "viewwifion":
+                                    return Color(red: 0.427, green: 0.349, blue: 0.827)
+                                case "viewwifino":
+                                   return Color(red: 0.851, green: 0.161, blue: 0.161)
+                                default:
+                                    return Color.red
+                                }
+                            }())
                             .font(
                                 Font.custom("Roboto", size: 28)
                                     .weight(.bold)
                             )
-                            .shadow(color: Color(red: 0.109, green: 0.349, blue: 0.827, opacity: 0.8), radius: 5, x: 0, y: 0)
+                            .shadow(color: wifiIcon == "viewwifion" ? Color(red: 0.427, green: 0.349, blue: 0.827, opacity: 0.55) : Color.red.opacity(0.55), radius: 5, x: 0, y: 0)
                         
                         Text(ipAddress)
                             .foregroundColor(.white)
@@ -108,6 +119,22 @@ struct DeviceDetail: View {
                 
             }
         }
-        .navigationBarTitle("Device Detail", displayMode: .inline)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button(action: {
+                            presentationMode.wrappedValue.dismiss()
+                        }) {
+                            Image(systemName: "chevron.left")
+                                .foregroundColor(Color(red: 0.427, green: 0.349, blue: 0.827))
+                        }
+                    }
+                    ToolbarItem(placement: .principal) {
+                        Text("Device Details")
+                            .foregroundColor(.white)
+                            .font(Font.custom("Roboto", size: 17).weight(.bold))
+                    }
+                }
     }
 }
