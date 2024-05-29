@@ -24,8 +24,16 @@ struct DeviceCell: View {
             VStack(alignment: .leading) {
                 Text(wifiName)
                     .foregroundColor(.white)
+                    .font(
+                        Font.custom("Roboto", size: 17)
+                            .weight(.medium)
+                    )
                 Text(ipAddress)
                     .foregroundColor(.gray)
+                    .font(
+                        Font.custom("Roboto", size: 13)
+                            .weight(.medium)
+                    )
             }
             .padding(.leading, 10)
 
@@ -37,6 +45,6 @@ struct DeviceCell: View {
         }
         .padding()
         .background(Color(red: 0.063, green: 0.051, blue: 0.173))
-        .cornerRadius(10)
+//        .cornerRadius(10)
     }
 }
