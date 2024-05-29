@@ -74,21 +74,35 @@ struct MainView: View {
                         .overlay(
                             VStack(spacing: 10) {
                                 Text("Current Wi-Fi")
-                                    .font(.subheadline)
+                                    .font(
+                                        Font.custom("Roboto", size: 15)
+                                            .weight(.regular)
+                                    )
                                     .foregroundColor(.white)
                                 
                                 Text("WIFI_Name")
-                                    .font(.headline)
-                                    .foregroundColor(.white)
+                                    .font(
+                                        Font.custom("Roboto", size: 28)
+                                            .weight(.bold)
+                                    )
+                                    .foregroundColor(Color(red: 0.427, green: 0.349, blue: 0.827))
+                                    .shadow(color: Color(red: 0.109, green: 0.349, blue: 0.827, opacity: 0.8), radius: 5, x: 0, y: 0)
                                 
                                 Text("Ready to Scan this network")
-                                    .font(.body)
-                                    .foregroundColor(.white)
+                                    .font(
+                                        Font.custom("Roboto", size: 17)
+                                            .weight(.regular)
+                                    )
+                                    .foregroundColor(Color(red: 0.322, green: 0.345, blue: 0.471))
                                 
                                 Button(action: {
                                     isWifiDetectorActive = true
                                 }) {
                                     Text("Scan current network")
+                                        .font(
+                                            Font.custom("Roboto", size: 20)
+                                                .weight(.medium)
+                                        )
                                         .frame(width: 312, height: 50)
                                         .background(Color(red: 0.427, green: 0.349, blue: 0.827))
                                         .foregroundColor(.white)
@@ -105,7 +119,13 @@ struct MainView: View {
                             }) {
                                 VStack {
                                     Image("camera")
-                                    Text("Infrared Detection")
+                                    Text("Infrared Detections")
+                                        .font(
+                                            Font.custom("Roboto", size: 17)
+                                                .weight(.medium)
+                                        )
+                                        .multilineTextAlignment(.center)
+                                        
                                 }
                             }
                             .frame(width: 140, height: 140)
@@ -118,6 +138,10 @@ struct MainView: View {
                                     VStack {
                                         Image("magnetic")
                                         Text("Magnetic Detection")
+                                            .font(
+                                                Font.custom("Roboto", size: 17)
+                                                    .weight(.medium)
+                                            )
                                     }
                                 }
                                 .buttonStyle(PlainButtonStyle())
@@ -136,6 +160,11 @@ struct MainView: View {
                                 VStack {
                                     Image("bluet")
                                     Text("Bluetooth Detection")
+                                        .font(
+                                            Font.custom("Roboto", size: 17)
+                                                .weight(.medium)
+                                        )
+                                    
                                 }
                             }
                             .frame(width: 140, height: 140)
@@ -149,6 +178,10 @@ struct MainView: View {
                                 VStack {
                                     Image("tips")
                                     Text("Antispy Tips")
+                                        .font(
+                                            Font.custom("Roboto", size: 17)
+                                                .weight(.medium)
+                                        )
                                 }
                             }
                             .frame(width: 140, height: 140)
