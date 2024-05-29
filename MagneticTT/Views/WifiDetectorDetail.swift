@@ -29,6 +29,10 @@ struct WifiDetectorDetail: View {
                     }
                     ToolbarItem(placement: .principal) {
                         Text("Result")
+                            .font(
+                                Font.custom("Roboto", size: 17)
+                                    .weight(.bold)
+                            )
                             .multilineTextAlignment(.center)
                             .foregroundColor(.white)
                     }
@@ -68,6 +72,9 @@ struct WifiDetectorDetail: View {
                         ForEach(0..<randomData, id: \.self) { index in
                             NavigationLink(destination: DeviceDetail(wifiName: wifiNames.randomElement()!, ipAddress: randomIPAddress(), wifiIcon: index % 2 == 0 ? "viewwifion" : "viewwifino")) {
                                 DeviceCell(wifiName: wifiNames.randomElement()!, ipAddress: randomIPAddress(), wifiIcon: index % 2 == 0 ? "wifion" : "wifino")
+                                    .padding(.leading, 30)
+                                    .padding(.trailing, 15)
+                                    
                             }
                             .listRowBackground(Color.black)
                             .listRowInsets(EdgeInsets())
