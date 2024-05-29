@@ -20,6 +20,10 @@ struct MagneticView: View {
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     Text("Magnetic Detection")
+                        .font(
+                            Font.custom("Roboto", size: 17)
+                                .weight(.bold)
+                        )
                         .multilineTextAlignment(.center)
                         .foregroundColor(.white)
                 }
@@ -46,6 +50,10 @@ struct MagneticView: View {
                     }
                     VStack {
                         Text(searchText)
+                            .font(
+                                Font.custom("Roboto", size: 17)
+                                    .weight(.medium)
+                            )
                             .foregroundColor(.white)
                     }
                     Spacer()
@@ -58,6 +66,11 @@ struct MagneticView: View {
                         }
                     }) {
                         Text(buttonText)
+                            .font(
+                                Font.custom("Roboto", size: 20)
+                                    .weight(.medium)
+                            )
+
                             .frame(width: 350, height: 50)
                             .background(Color(red: 0.427, green: 0.349, blue: 0.827))
                             .foregroundColor(.white)
